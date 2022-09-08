@@ -40,23 +40,42 @@ def _when_program_runs(context, program):
 
 @then("the output should be")
 def _then_output_should_be(context):
-    #print(f'1 conteudo: {str(context.text)}')
-    #print(f'1 tamanho : {len(str(context.text))}')
-    #print(f'1 tipo    : {type(str(context.text))}')
+    # print(f'1 conteudo: {str(context.text)}')
+    # print(f'1 tamanho : {len(str(context.text))}')
+    # print(f'1 tipo    : {type(str(context.text))}')
     assertion1 = str(context.text).replace(" ", "")
     assertion1 = assertion1.replace("\n", "")
-    #print(f'1 split     : {assertion1}')
-    #print(f'1 split size: {len(assertion1)}')
-    #print(f'1 split tipo: {type(assertion1)}')
+    assertion1 = assertion1.replace("\r", "")
+    # print(f'1 split     : {repr(assertion1)}')
+    # print(f'1 split size: {len(assertion1)}')
+    # print(f'1 split tipo: {type(assertion1)}')
     
-    #print(f'2 conteudo: {str(context.result.stdout.decode("utf-8"))}')
-    #print(f'2 tamanho : {len(str(context.result.stdout.decode("utf-8")))}')
-    #print(f'2 tipo    : {type(str(context.result.stdout.decode("utf-8")))}')
+    # print(f'2 conteudo: {str(context.result.stdout.decode("utf-8"))}')
+    # print(f'2 tamanho : {len(str(context.result.stdout.decode("utf-8")))}')
+    # print(f'2 tipo    : {type(str(context.result.stdout.decode("utf-8")))}')
     assertion2 = str(context.result.stdout.decode("utf-8")).replace(" ", "")
     assertion2 = assertion2.replace("\n", "")
-    assertion2 = assertion2[:-1]
-    #print(f'2 split     : {assertion2}')
-    #print(f'2 split size: {len(assertion2)}')
-    #print(f'2 split tipo: {type(assertion2)}')
+    assertion2 = assertion2.replace("\r", "")
+    # print(f'2 split     : {repr(assertion2)}')
+    # print(f'2 split size: {len(assertion2)}')
+    # print(f'2 split tipo: {type(assertion2)}')
     
+    # #open text file
+    # text_file = open(r"D:\Desktop\Pucrs\2022_2\metodos\metodos-t1\txt1.txt", "w")
+    
+    # #write string to file
+    # text_file.write(assertion1)
+    
+    # #close file
+    # text_file.close()
+
+    # #open text file
+    # text_file = open(r"D:\Desktop\Pucrs\2022_2\metodos\metodos-t1\txt2.txt", "w")
+    
+    # #write string to file
+    # text_file.write(assertion2)
+    
+    # #close file
+    # text_file.close()
+
     assert assertion1 == assertion2
