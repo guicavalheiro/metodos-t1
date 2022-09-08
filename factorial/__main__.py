@@ -17,15 +17,17 @@
 
 """System implementation."""
 
-from problem import Factorial
+from factorial.factorial import Factorial
 
 
 def main():
     """Program entry point."""
+    N = int(input())
     
-    N = int(input("Insira um número tal qual 0 < N < 13: "))
-    factorial = Factorial(N)
-    print(f"Factor = {factorial.do_factorial()}")
+    factorial = Factorial()
+    factorial.add_input(N)
+    
+    print(f"factor = {factorial.do_factorial()}")  
 
 if __name__ == "__main__":
     main()

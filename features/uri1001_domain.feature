@@ -16,23 +16,22 @@
 # along with this software.  If not, see <https://www.gnu.org/licenses/>.
 
 @domain
-Feature: Calculator
+Feature: Factorial
 
 Narrative:
 
-In order to avoid silly mistakes
-As a math novice
-I want to be told the sum of two numbers
+I want to be told the factor of a number
 
-Scenario Outline: Add two numbers
+Scenario Outline: Factor a number
 
-Given the first number is <a>
-And the second number is <b>
-When the two numbers are added
+Given the number <a>
+When you execute the factorial
 Then the result should be <x>
 
 Examples:
-|  a |  b |  x |
-| 10 |  9 | 19 |
-|-10 |  4 | -6 |
-| 15 | -7 |  8 |
+| a |  x             |
+| 2 |  2             |
+| 3 |  6             |
+| 4 | 24             |
+|-1 | Input Invalido |
+| 15| Input Invalido |

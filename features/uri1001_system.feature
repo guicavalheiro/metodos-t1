@@ -19,48 +19,69 @@ Feature: URI1001 CLI
 
 Narrative:
 
-In order to avoid silly mistakes
-As a math novice
-I want to be told the sum of two numbers
+I want to be told the factor of a number
 
-Scenario: Run program with 10 and 9 (pos,pos)
+Scenario: Run program with 2 (pos)
 
 Given the input is
 """
-10
-9
+2
 """
-When the program "calculator" runs
+When the program "factorial" runs
 Then the output should be
 """
-X = 19
+factor = 2
 
 """
 
-Scenario: Run program with -10 and 4 (neg,pos)
+Scenario: Run program with 3 (pos)
 
 Given the input is
 """
--10
+3
+"""
+When the program "factorial" runs
+Then the output should be
+"""
+factor = 6
+
+"""
+
+Scenario: Run program with 4 (pos)
+
+Given the input is
+"""
 4
 """
-When the program "calculator" runs
+When the program "factorial" runs
 Then the output should be
 """
-X = -6
+factor = 24
 
 """
 
-Scenario: Run program with 15 and -7 (pos,neg)
+Scenario: Run program with -1 (neg)
+
+Given the input is
+"""
+-1
+"""
+When the program "factorial" runs
+Then the output should be
+"""
+factor = Input Invalido
+
+"""
+
+Scenario: Run program with 15 (pos)
 
 Given the input is
 """
 15
--7
 """
-When the program "calculator" runs
+When the program "factorial" runs
 Then the output should be
 """
-X = 8
+factor = Input Invalido
 
 """

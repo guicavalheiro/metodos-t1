@@ -40,23 +40,24 @@ def _when_program_runs(context, program):
 
 @then("the output should be")
 def _then_output_should_be(context):
+    
     # print(f'1 conteudo: {str(context.text)}')
     # print(f'1 tamanho : {len(str(context.text))}')
     # print(f'1 tipo    : {type(str(context.text))}')
     assertion1 = str(context.text).replace(" ", "")
     assertion1 = assertion1.replace("\n", "")
     assertion1 = assertion1.replace("\r", "")
-    # print(f'1 split     : {repr(assertion1)}')
+    print(f'1 split     : {repr(assertion1)}')
     # print(f'1 split size: {len(assertion1)}')
     # print(f'1 split tipo: {type(assertion1)}')
     
-    # print(f'2 conteudo: {str(context.result.stdout.decode("utf-8"))}')
+    print(f'2 conteudo: {str(context.result.stdout)}')
     # print(f'2 tamanho : {len(str(context.result.stdout.decode("utf-8")))}')
     # print(f'2 tipo    : {type(str(context.result.stdout.decode("utf-8")))}')
     assertion2 = str(context.result.stdout.decode("utf-8")).replace(" ", "")
     assertion2 = assertion2.replace("\n", "")
     assertion2 = assertion2.replace("\r", "")
-    # print(f'2 split     : {repr(assertion2)}')
+    print(f'2 split     : {repr(assertion2)}')
     # print(f'2 split size: {len(assertion2)}')
     # print(f'2 split tipo: {type(assertion2)}')
     
@@ -77,5 +78,4 @@ def _then_output_should_be(context):
     
     # #close file
     # text_file.close()
-
     assert assertion1 == assertion2

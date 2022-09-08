@@ -22,16 +22,20 @@ import math
 class Factorial:
     """A helper for factorial."""
 
-    def __init__(self, N):
+    def __init__(self):
         """Initialize factorial object."""
-        self.N = N
+        self.N = 0
 
     def add_input(self, value):
         """Add a new input to the factorial."""
-        
-        while 0 >= self.N or self.N >= 13:
-            self.N = int(input("Insira um número tal qual 0 < N < 13: "))
+        if 0 >= value or value >= 13:
+            self.N = -1
+        else:
+            self.N = value
 
     def do_factorial(self):
         """Factorial of N."""
-        return math.factorial(self.N)
+        if self.N == -1:
+            return 'Input Invalido'
+        else:
+            return math.factorial(self.N)
